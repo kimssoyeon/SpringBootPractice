@@ -1,0 +1,21 @@
+## 2일차
+
+- 정적 컨텐츠
+    - 파일을 그대로 웹브라우저에 내려주는 것
+    - static 밑에 {파일명=곧 endpoint.html가 됨}.html 해주면 걔가 반환됨
+    - 단, controller가 우선순위를 가지고 다음 static에서 search
+- mvc와(model view controller) 템플릿 엔진
+    - html을 동적으로 바꿔서 내리는 것
+    - controller와 view의 분리?
+        - view는 화면 관련된 일만, controller는 비즈니스 로직
+    - **requestparam**은 파라미터에서 받을 값, 값이 있어야 할지 없어도 될지도 넘겨줌
+    - html 코드를 화면에서 띄우면 동적으로 값을 “”바꿔서”” 내려줌
+- api
+    - 클라이언트에게 json 포맷으로 데이터를 내려주는 것
+    - **responseBody** 는 응답하는 body부에 내용을 직접 넣어 주겠다. html 말고 return 부에 (객체로 반환)
+    - 기본 문자 처리: StringHttpMessageConverter
+    - 기본 객체 처리: MappingJackson2HttpMessageConverter
+- 비즈니스 요구사항 정리
+    - 컨트롤러 서비스 리포지토리 도메인 데이터베이스(RDB, nosql..) 계층형구조
+    - 클래스 의존 관계
+        - 회원 서비스, 회원 저장(interface)
